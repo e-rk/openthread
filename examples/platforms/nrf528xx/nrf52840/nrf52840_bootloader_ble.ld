@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2018, The OpenThread Authors.
+ *  Copyright (c) 2019, The OpenThread Authors.
  *  All rights reserved.
  *
  *  Redistribution and use in source and binary forms, with or without
@@ -36,8 +36,8 @@ GROUP(-lgcc -lc -lnosys)
 
 MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x00001000, LENGTH = 0xdf000
-  RAM (rwx) :  ORIGIN = 0x20000008, LENGTH = 0x3fff8
+  FLASH (rx) : ORIGIN = 0x00026000, LENGTH = 0xce000
+  RAM (rwx) :  ORIGIN = 0x20002c08, LENGTH = 0x3d3f8
 }
 
 OUTPUT_FORMAT ("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
