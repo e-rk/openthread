@@ -110,6 +110,10 @@ COMMONCFLAGS                      := \
 
 include $(dir $(abspath $(lastword $(MAKEFILE_LIST))))/common-switches.mk
 
+ifeq ($(CUSTOM_EUI),1)
+COMMONCFLAGS += -DOPENTHREAD_CONFIG_ENABLE_PLATFORM_EUI64_CUSTOM_SOURCE=1
+endif
+
 ifeq ($(DISABLE_BUILTIN_MBEDTLS),1)
 COMMONCFLAGS                   += $(NRF52840_MBEDTLS_CPPFLAGS)
 else

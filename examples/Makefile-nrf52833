@@ -80,6 +80,10 @@ COMMONCFLAGS                      := \
 
 include $(dir $(abspath $(lastword $(MAKEFILE_LIST))))/common-switches.mk
 
+ifeq ($(CUSTOM_EUI),1)
+COMMONCFLAGS += -DOPENTHREAD_CONFIG_ENABLE_PLATFORM_EUI64_CUSTOM_SOURCE=1
+endif
+
 ifeq ($(BOOTLOADER),1)
 $(info Warning: BOOTLOADER=1 switch is deprecated. Defaulting to BOOTLOADER=USB.)
 override BOOTLOADER = USB
