@@ -95,7 +95,6 @@ endif
 # Otherwise, the default serial transport is UART.
 #
 ifndef DISABLE_TRANSPORTS
-configure_OPTIONS              += --enable-ncp
 configure_OPTIONS              += --enable-radio-only
 ifeq ($(NCP_SPI),1)
 COMMONCFLAGS                   += -DSPIS_AS_SERIAL_TRANSPORT=1
@@ -103,7 +102,6 @@ COMMONCFLAGS                   += -DOPENTHREAD_CONFIG_NCP_SPI_ENABLE=1
 else
 COMMONCFLAGS                   += -DUART_AS_SERIAL_TRANSPORT=1
 COMMONCFLAGS                   += -DOPENTHREAD_CONFIG_NCP_UART_ENABLE=1
-configure_OPTIONS              += --enable-cli
 endif # NCP_SPI == 1
 endif # DISABLE_TRANSPORTS
 
